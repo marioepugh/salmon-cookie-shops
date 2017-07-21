@@ -57,6 +57,7 @@ Location.prototype.render = function(){
   tableEl.appendChild(trEl);
 };
 
+
 new Location('Pike', 23, 65, 6.3);
 new Location('Seatac', 3, 24, 1.2);
 new Location('Seattle Center', 11, 38, 3.7);
@@ -79,7 +80,7 @@ function makeHeaderRow(){
   }
 
   var totalThEl = document.createElement('th');
-  totalThEl.textContent = 'Daily Location Total:';
+  totalThEl.textContent = 'Daily Total:';
   trEl.appendChild(totalThEl);
 
   tableEl.appendChild(trEl);
