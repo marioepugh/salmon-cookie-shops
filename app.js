@@ -54,6 +54,7 @@ Location.prototype.render = function(){
   totalTdEl.textContent = this.totalCookiesPerDay;
   trEl.appendChild(totalTdEl);
 
+
   tableEl.appendChild(trEl);
 };
 
