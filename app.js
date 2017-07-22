@@ -53,10 +53,13 @@ Location.prototype.render = function(){
   var totalTdEl = document.createElement('td');
   totalTdEl.textContent = this.totalCookiesPerDay;
   trEl.appendChild(totalTdEl);
-
-
   tableEl.appendChild(trEl);
+
+  // var hourlyTdEl = document.createElement('td');
+  // hourlyTdEl.textContent = this.totalCookiesPerDay
+
 };
+
 
 
 new Location('Pike', 23, 65, 6.3);
@@ -87,6 +90,26 @@ function makeHeaderRow(){
   tableEl.appendChild(trEl);
 }
 
+ .makeFooterRow = function() {
+  var trEl = document.createElement('tfoot');
+
+  var totalTdEl = document.createElement('td');
+  totalTdEl.textContent = 'Hourly Totals';
+  trEl.appendChild(totalTdEl);
+
+  for (var i = 0; i < hours.length; i++) {
+    var hourlyCookies = 0;
+    for(var j = 0; j < allLocations.length; j++) {
+      hourlyCookies += allLocations[j].cookiesSoldEachHour[i];
+    }
+    console.log(this.cookiesSoldEachHour, "this.cookiesSoldEachHour");
+    var hourlyTdEl = document.createElement('td');
+    hourlyTdEl.textContent = hourlyCookies;
+    trEl.appendChild(hourlyTdEl);
+  }
+  tableEl.appendChild(trEl);
+};
+
 //  This single function renders all of the individual cookie sales rows
 function renderShops(){
   for(var i = 0; i < allLocations.length; i++){
@@ -96,3 +119,4 @@ function renderShops(){
 
 makeHeaderRow();
 renderShops();
+Location.prototype.makeFooterRow();
