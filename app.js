@@ -5,6 +5,8 @@ console.log(hours, 'hours array');
 
 // This is an array to hold our locations
 // checking my merge issues
+// maybe i am getting my acp down
+
 
 
 var allLocations = [];
