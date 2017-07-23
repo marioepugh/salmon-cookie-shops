@@ -4,6 +4,9 @@ var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 console.log(hours, 'hours array');
 
 // This is an array to hold our locations
+// checking my merge issues
+
+
 var allLocations = [];
 
 // This is to access the table this is in the DOM
@@ -90,7 +93,7 @@ function makeHeaderRow(){
   tableEl.appendChild(trEl);
 }
 
- .makeFooterRow = function() {
+Location.prototype.makeFooterRow = function() {
   var trEl = document.createElement('tfoot');
 
   var totalTdEl = document.createElement('td');
