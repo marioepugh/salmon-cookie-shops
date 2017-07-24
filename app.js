@@ -4,6 +4,12 @@ var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 console.log(hours, 'hours array');
 
 // This is an array to hold our locations
+// checking my merge issues
+// maybe i am getting my acp down
+// the last One
+
+
+
 var allLocations = [];
 
 // This is to access the table this is in the DOM
@@ -53,10 +59,13 @@ Location.prototype.render = function(){
   var totalTdEl = document.createElement('td');
   totalTdEl.textContent = this.totalCookiesPerDay;
   trEl.appendChild(totalTdEl);
-
-
   tableEl.appendChild(trEl);
+
+  // var hourlyTdEl = document.createElement('td');
+  // hourlyTdEl.textContent = this.totalCookiesPerDay
+
 };
+
 
 
 new Location('Pike', 23, 65, 6.3);
@@ -87,6 +96,26 @@ function makeHeaderRow(){
   tableEl.appendChild(trEl);
 }
 
+Location.prototype.makeFooterRow = function() {
+  var trEl = document.createElement('tfoot');
+
+  var totalTdEl = document.createElement('td');
+  totalTdEl.textContent = 'Hourly Totals';
+  trEl.appendChild(totalTdEl);
+
+  for (var i = 0; i < hours.length; i++) {
+    var hourlyCookies = 0;
+    for(var j = 0; j < allLocations.length; j++) {
+      hourlyCookies += allLocations[j].cookiesSoldEachHour[i];
+    }
+    console.log(this.cookiesSoldEachHour, "this.cookiesSoldEachHour");
+    var hourlyTdEl = document.createElement('td');
+    hourlyTdEl.textContent = hourlyCookies;
+    trEl.appendChild(hourlyTdEl);
+  }
+  tableEl.appendChild(trEl);
+};
+
 //  This single function renders all of the individual cookie sales rows
 function renderShops(){
   for(var i = 0; i < allLocations.length; i++){
@@ -96,3 +125,4 @@ function renderShops(){
 
 makeHeaderRow();
 renderShops();
+Location.prototype.makeFooterRow();
