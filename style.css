@@ -1,6 +1,37 @@
 * {
   font-family: 'Helvetica', sans-serif;
 }
+table{
+  border: 1px solid;
+  width: 100%;
+}
+table th{
+    border: 1px solid;
+}
+table td{
+    border: 1px solid;
+    text-align:right;
+}
+form{
+  width: 100%;
+}
+#content{
+  width: 1000px;
+}
+form imput{
+  margin-right: 20px;
+}
+h1, h2 {
+  font-family: 'Passion One', cursive;
+  color: purple;
+}
+body {
+  background-color: lightsalmon;
+}
+
+/** {
+  font-family: 'Helvetica', sans-serif;
+}
 
 table{
   border: 1px solid;
@@ -16,4 +47,4 @@ table td{
 h1, h2 {
   font-family: 'Passion One', cursive;
   color: purple;
-}
+}*/
