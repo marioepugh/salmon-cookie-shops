@@ -21,14 +21,22 @@ form{
 form imput{
   margin-right: 20px;
 }
-h1, h2 {
+h1 {
+  font-family: 'Satisfy', cursive;
+}
+h2 {
   font-family: 'Passion One', cursive;
   color: purple;
 }
 body {
   background-color: lightsalmon;
 }
-
+#top {
+  text-align: center;
+}
+#frostedcookies {
+  text-align: center;
+}
 /** {
   font-family: 'Helvetica', sans-serif;
 }
