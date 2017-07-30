@@ -143,15 +143,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   function handleNewSubmit(event){
     event.preventDefault();
-    var locationName = event.target.elements["locationName"].value;
-    var maxCustomers = parseInt(event.target.elements["maxCustomers"].value);
-    var minCustomers = parseInt(event.target.elements["minCustomers"].value);
-    var avgCookiesPerSale = parseInt(event.target.elements["avgCookiesPerSale"].value);
-    new Location(locationName, maxCustomers, minCustomers, avgCookiesPerSale);
-    table.innerHTML = '';
-    makeHeaderRow();
-    renderShops();
+    var locationName = event.target.elements['locationName'].value;
+    var maxCustomers = parseInt(event.target.elements['maxCustomers'].value);
+    var minCustomers = parseInt(event.target.elements['minCustomers'].value);
+    var avgCookiesPerSale = parseInt(event.target.elements['avgCookiesPerSale'].value);
+    var newLocation = new Location(locationName, maxCustomers, minCustomers, avgCookiesPerSale);
+    newLocation.render();
+    // table.innerHTML = '';
+    // makeHeaderRow();
+    // renderShops();
     // Location.prototype.
+    // trying to delete footer row
+    var tFootEl = tableEl.querySelector('tFoot');
+    tableEl.removeChild(tFootEl);
     makeFooterRow();
   }
 
